@@ -1,0 +1,126 @@
+﻿@using Application.Contracts.ProductCategory
+
+@model List<ProductCategoryViewModel>
+
+<div class="content-wrapper" style="min-height: 1604.8px;">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Projects</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Projects</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+      <div>
+          <a class="btn btn-primary" href="#showmodal=/ProductCategory/Create?handler=Create" type="button" >
+              Add ProductCategory 
+          </a>
+      </div>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+      <!-- Default box -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">ProductCategory</h3>
+
+          <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+              <i class="fas fa-minus"></i>
+            </button>
+            <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+        </div>
+        <div class="card-body p-0">
+          <table class="table table-striped projects">
+              <thead>
+                  <tr>
+                      <th style="width: 10%">
+                          No
+                      </th>
+                      <th style="width: 20%">
+                          ProductCategory
+                      </th>
+                      <th style="width: 20%">
+                          Picture
+                      </th>
+                     
+             
+                      <th style="width: 20%">
+                          ProductsCount
+                      </th>
+                      <th style="width: 30%">
+                          Operation
+                      </th>
+                  </tr>
+              </thead>
+              <tbody>
+                  @foreach(var item in Model)
+                  {
+                            
+                        <tr>
+                      <td>
+                          @item.Id
+                      </td>
+                      <td>
+                         @item.Name
+                       </td>
+                      <td>
+                         @item.Picture
+                      </td>
+                     <td>
+                         @item.ProductsCount
+                      </td>
+                      
+                      <td >
+                          <a class="btn btn-primary btn-sm" href="#">
+                              <i class="fas fa-folder">
+                              </i>
+                              View
+                          </a>
+                          <a class="btn btn-info btn-sm" href="#">
+                              <i class="fas fa-pencil-alt">
+                              </i>
+                              Edit
+                          </a>
+                          <a class="btn btn-danger btn-sm" href="#">
+                              <i class="fas fa-trash">
+                              </i>
+                              Delete
+                          </a>
+                      </td>
+                  </tr>
+                        }
+            
+              </tbody>
+          </table>
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+
+    </section>
+    <!-- /.content -->
+  </div>
+
+  @section Scripts {
+    <script src="~/js/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/js/plugins/datatables/dataTables.bootstrap.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#datatable').dataTable();
+        });
+    </script>
+}

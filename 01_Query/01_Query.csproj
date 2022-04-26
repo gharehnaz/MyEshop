@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <RootNamespace>_01_Query</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ShopManagement\Domain\Domain.csproj" />
+    <ProjectReference Include="..\ShopManagement\Infrastructure\Infrastructure.EF\Infrastructure.EF.csproj" />
+  </ItemGroup>
+
+</Project>
